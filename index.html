@@ -1,44 +1,27 @@
-.mary-photo{
-    
-    width: 250px;
-    margin-top: 0;
-    align-items: left;
-    margin-left: -15%;
-    transform: rotate(25deg) translateY(-150%);
-}
-h1{
-    color: black;
-    font-size: 40pt;
-    text-align: left;
-    margin: 1%
-}
-.about-her-text{
-    font-size: 20pt;
-    font-display: auto;
-    text-align: left;
-    width: 40%;
-    margin: 1%;
-    color: black;
-}
-
-.main-page{
-    background-color: #ffe6f0;
-    min-height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-<div className="main-page">
-    <h1>About Her:</h1>
-        <p className="about-her-text">She is a kind and loving individual who I get to be lucky to call my girlfriend. 
-            She is a 19 year old studying biology in university. She works at the Houston Zoo as a hostess for 
-            the restaurants. Her beauty and love for the animals knows no bounds. On her freetime from working and studying, 
-            she volunteers at animal shelters to help in any way she can. She is such an inspiring person. Who wouldn't want to be her. 
-            She was also the head drum major for two years at the Raiders Drum and Bugle Corps.
-        </p>
-    <img src={mary_photo_1} alt="Mary" className="mary-photo"></img>
-</div>
+<html>
+    <style>
+        body {
+            background-color: #f3e8ff;
+        }
+    </style>
+    <body>
+        <h1 style="color:blueviolet; text-align:center; font-size:40pt">Welcome to our Relationship!</h1>
+        <h3 style="color:#7851A9; display:inline-block; margin-left:8%; font-size:30pt">Where the lover boy.....</h3>
+        <h3 style="color:rgb(200, 124, 207); display:inline-block; margin-left:35%; font-size:30pt">Meets the perfect girl</h3>
+        <br />
+        <br />
+        <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15%;
+            ">
+            <img src="travis_photo_1.jpeg" width="300" alt="Photo of him">
+            <a href="AboutRelationship.html" style="font-size:28pt; color:#7851A9; text-align:center;">Our <br /> Relationship</a>
+            <img src="mary_photo_1.jpeg" width="300" alt="Photo of her">
+        </div>
+        <br /><br />
+        <a href="AboutHim.html" style="display:inline-block; margin-left:14%; font-size:30pt">About him.</a>
+        <a href="AboutHer.html" style="float:right; margin-right:14%; font-size:30pt">About her.</a>
+    </body>
+</html>
