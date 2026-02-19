@@ -1,17 +1,63 @@
 <html>
     <body>
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; text-align:center;">
+            <br />
+            <h1>Albums:</h1>
+            <br />
+            <p></p>
+            <p style="color:blueviolet; font-size:20pt;">Anniversary: July 17, 2024 <br /> Time together: <span id="timer"></span></p>
+            <p></p>
+        </div>
+        <script>
+        // Set your start date here
+        const start = new Date("2024-07-17T00:00:00");
+
+        function updateTimer() {
+            const now = new Date();
+
+            let years = now.getFullYear() - start.getFullYear();
+            let months = now.getMonth() - start.getMonth();
+            let days = now.getDate() - start.getDate();
+            let hours = now.getHours() - start.getHours();
+            let minutes = now.getMinutes() - start.getMinutes();
+            let seconds = now.getSeconds() - start.getSeconds();
+
+            // Fix negatives by borrowing from larger units
+            if (seconds < 0) {
+            seconds += 60;
+            minutes--;
+            }
+            if (minutes < 0) {
+            minutes += 60;
+            hours--;
+            }
+            if (hours < 0) {
+            hours += 24;
+            days--;
+            }
+            if (days < 0) {
+            // Borrow days from previous month
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            days += prevMonth.getDate();
+            months--;
+            }
+            if (months < 0) {
+            months += 12;
+            years--;
+            }
+
+            document.getElementById("timer").textContent =
+            `${years}y ${months}m ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+        </script>
         <style>
             body{
                 background-color: #f3e8ff;
             }
         </style>
-        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; text-align:center;">
-            <br />
-            <h1>Albums:</h1>
-            <br />
-            <p> Text</p>
-            <p>Text</p>
-            <p>Text</p>
-        </div>
+        
     </body>
 </html>
